@@ -1,5 +1,8 @@
 #!/bin/bash
 # coding: utf-8
 
-go run main.go
+# export CLIENT_ID=""
+# export CLIENT_SECRET=""
+source .env
 
+go run main.go
