@@ -7,12 +7,28 @@ import "github.com/labstack/echo-contrib/session"
 import "github.com/labstack/echo/v4"
 import "golang.org/x/oauth2"
 import "golang.org/x/oauth2/google"
+import "gopkg.in/yaml.v2"
 import v2 "google.golang.org/api/oauth2/v2"
 import "github.com/google/uuid"
+import "io/ioutil"
 import "net/http"
 import "os"
 import "text/template"
 import "time"
+
+func loadYaml() {
+
+	buf, err := ioutil.ReadFile(".env.yml")
+	if err != nil {
+		panic(err)
+	}
+
+	m := make(map[interface{}]interface{})
+	err = yaml.Unmarshal(buf, &m)
+	if err != nil {
+		panic(err)
+	}
+}
 
 func configure(c echo.Context) *oauth2.Config {
 
