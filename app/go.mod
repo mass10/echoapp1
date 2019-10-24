@@ -12,4 +12,5 @@ require (
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550 // indirect
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
 	google.golang.org/api v0.11.0
+	gopkg.in/yaml.v2 v2.2.2
 )
